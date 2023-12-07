@@ -1,17 +1,14 @@
 package javatest;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 public class myCSVMenu {
 
 	public static void main(String[] args) {
 		int menu;
 		boolean check = true;
-		float[][] idat = new float[10][3];
+		float[][] indat = new float[10][3];
 		
 		Scanner scan = new Scanner(System.in);
 		do {
@@ -53,7 +50,7 @@ public class myCSVMenu {
 					for(int i= 0; i<10; i++) {
 						for(int j=0; j<3; j++) {
 							out.write(Float.toString(indat[i][j]).getBytes("utf-8"));
-							out.write(",".getBytes("utf-8");
+							out.write(",".getBytes("utf-8"));
 						}
 						out.write("\n".getBytes("utf-8"));
 					}
@@ -61,9 +58,9 @@ public class myCSVMenu {
 					System.out.println("쓰기하고 종료합니다");
 					check = false;
 					break;
-				}catch(FileNotFoundException e) {\
+				}catch(FileNotFoundException e) {
 					System.out.println(e.getMessage());
-				}catch(IOException e
+				}catch(IOException e) {
 						System.out.println(e.getMessage());
 			}finally {
 				try {out.close();} catch(IOException e) {}
@@ -72,6 +69,6 @@ public class myCSVMenu {
 				System.out.println("잘못된 입력함");
 		}
 	}while(check);
-	scan.close()
+	scan.close();
 }
 }
